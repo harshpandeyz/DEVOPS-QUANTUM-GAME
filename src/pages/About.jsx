@@ -77,14 +77,19 @@ export default function About() {
       >
         <Gamepad2 size={55} className="mb-3 icon dev-icon" />
         <h2 className="dev-title">
-          Meet the Developer 👇
+          Meet the Developers 👇
         </h2>
         
         <h3 className="dev-name">Prathmesh Waghmare</h3>
         <p className="dev-role">Full-Stack Developer | Gamer | UI Enthusiast</p>
+        <hr />
+        <h3 className="dev-name">Ibrahim Poonawala</h3>
+        <p className="dev-role">Backend Developer | Devops Contributor</p>
+        <hr />
+        
 
         <p className="dev-desc">
-          I created Game Hub as a modern, interactive platform where people can enjoy, 
+          We created Game Hub as a modern, interactive platform where people can enjoy, 
           learn, and unlock their gaming potential.  
           My goal is to build creative tech experiences that inspire & entertain!
         </p>
@@ -95,20 +100,29 @@ export default function About() {
           className="contact-dev-btn"
           onClick={() => document.getElementById("contactModal").style.display = "flex"}
         >
-          <Sparkles size={18} className="me-2" /> Connect With Me
+          <Sparkles size={18} className="me-2" /> Connect With Us
         </motion.button>
 
         {/* Contact Pop-Up Modal */}
         <div id="contactModal" className="contact-modal">
           <div className="contact-box">
-            <h3>Contact Developer</h3>
+            <h3>Contact Developers</h3>
 
             <p><strong>Name:</strong> Prathmesh Waghmare</p>
             <p><strong>Phone:</strong> <a href="tel:+91 9309208325">+91 9309208325</a></p>
             <p><strong>Email:</strong> <a href="mailto:prathmeshwaghmare289@gmail.com">prathmeshwaghmare289@gmail.com</a></p>
 
+            <p><strong>Name:</strong> Ibrahim Poonawala</p>
+            <p><strong>Phone:</strong> <a href="tel:+91 7219317252">+91 7219317252</a></p>
+            <p><strong>Email:</strong> <a href="mailto:poonawalaibrahim9@gmail.com">poonawalaibrahim9@gmail.com</a></p>
+
             <p><strong>LinkedIn:</strong>  
               <a href="https://www.linkedin.com/in/prathmesh-waghmare-54b1812a2" target="_blank" rel="noreferrer">
+                Visit Profile
+              </a>
+            </p>
+            <p><strong>LinkedIn:</strong>  
+              <a href="https://www.linkedin.com/in/ibrahimpoonawala/" target="_blank" rel="noreferrer">
                 Visit Profile
               </a>
             </p>
