@@ -22,7 +22,7 @@ import "./App.css";
 
 export default function App() {
   return (
-    <>
+    <> <h1>Hello from Prathmesh branch!</h1>
       <Navbar />
       <main className="app-main">
         <Routes>

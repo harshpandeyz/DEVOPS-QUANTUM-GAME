@@ -121,7 +121,44 @@ export default function About() {
             </button>
           </div>
         </div>
+      {/* Tech Stack Section */}
+      <motion.div
+        className="container text-center mt-5 p-4 tech-stack-box"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+      >
+        <h2 className="mb-4">⚡ Tech Stack Used</h2>
 
+        <div className="row justify-content-center g-4">
+          <div className="col-md-3">
+            <div className="tech-card p-3">
+              <h5>React.js</h5>
+              <p>Frontend UI Development</p>
+            </div>
+          </div>
+
+          <div className="col-md-3">
+            <div className="tech-card p-3">
+              <h5>Framer Motion</h5>
+              <p>Smooth Animations</p>
+            </div>
+          </div>
+
+          <div className="col-md-3">
+            <div className="tech-card p-3">
+              <h5>Bootstrap</h5>
+              <p>Responsive Layout</p>
+            </div>
+          </div>
+
+          <div className="col-md-3">
+            <div className="tech-card p-3">
+              <h5>Lucide Icons</h5>
+              <p>Modern Icon Design</p>
+            </div>
+          </div>
+        </div>
+      </motion.div>
       </motion.div>
 
     </div>

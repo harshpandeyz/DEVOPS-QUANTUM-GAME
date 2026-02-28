@@ -115,6 +115,44 @@ window.dispatchEvent(new Event("storage"));
         <p className="auth-footer">
           New here? <Link to="/register" className="link-text">Create Account</Link>
         </p>
+        {/* Login Benefits Section */}
+<motion.div
+  className="container mt-5 p-4 text-center bg-light rounded shadow"
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+>
+  <h4 className="mb-3">🎮 Why Login to Game Hub?</h4>
+
+  <div className="row g-3 justify-content-center">
+    <div className="col-md-3">
+      <div className="p-3 border rounded">
+        ✔ Save your favorite games
+      </div>
+    </div>
+
+    <div className="col-md-3">
+      <div className="p-3 border rounded">
+        ✔ Secure & fast checkout
+      </div>
+    </div>
+
+    <div className="col-md-3">
+      <div className="p-3 border rounded">
+        ✔ Access exclusive features
+      </div>
+    </div>
+
+    <div className="col-md-3">
+      <div className="p-3 border rounded">
+        ✔ Track your gaming progress
+      </div>
+    </div>
+  </div>
+
+  <p className="mt-4 fw-bold text-primary">
+    Login now and level up your gaming experience 🚀
+  </p>
+</motion.div>
       </motion.div>
     </div>
   );

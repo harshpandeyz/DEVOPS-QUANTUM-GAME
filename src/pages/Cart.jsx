@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import { Link, useNavigate } from "react-router-dom";
 
 export default function Cart() {
@@ -111,6 +112,28 @@ export default function Cart() {
               </button>
             </div>
           </div>
+          {/* Cart Insights Section */}
+<motion.div
+  className="container mt-5 p-4 text-center bg-light rounded shadow-sm"
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+>
+  <h4 className="mb-3">📊 Cart Insights</h4>
+
+  <p>
+    🧩 Total Games: <strong>{cartItems.length}</strong>
+  </p>
+
+  <p>
+    💰 Total Amount: <strong>{totalPrice === 0 ? "Free" : `₹${totalPrice}`}</strong>
+  </p>
+
+  {cartItems.length > 0 && (
+    <p className="text-success fw-bold">
+      Ready to level up? Complete your checkout now! 🚀
+    </p>
+  )}
+</motion.div>
         </>
       )}
     </div>
