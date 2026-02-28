@@ -47,3 +47,4 @@ export default function App() {
     </>
   );
 }
+// Minor UI formatting adjustment
