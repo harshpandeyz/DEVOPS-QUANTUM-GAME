@@ -3,6 +3,10 @@ import { Gamepad2 } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function Profile() {
+
+  // ✅ Safe debug log (Commit 8)
+  console.log("Profile page loaded");
+
   const [user, setUser] = useState(null);
 
   useEffect(() => {
@@ -18,8 +22,8 @@ export default function Profile() {
   }, []);
 
   const logout = () => {
-localStorage.removeItem("gameHubLoggedIn");
-window.dispatchEvent(new Event("storage"));
+    localStorage.removeItem("gameHubLoggedIn");
+    window.dispatchEvent(new Event("storage"));
     alert("👋 Logged out successfully!");
     window.location.href = "/";
   };
@@ -37,6 +41,11 @@ window.dispatchEvent(new Event("storage"));
           <Gamepad2 size={40} />
           <h2>{user.username}'s Gamer Profile 🎮</h2>
         </div>
+
+        {/* ✅ Small welcome line added */}
+        <p className="text-muted text-center small mb-3">
+          Welcome back, {user.username}! Ready to level up today? 🚀
+        </p>
 
         <div className="profile-info">
           <p><b>Full Name:</b> {user.name}</p>
