@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Search } from "lucide-react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom"; // ✅ added navigate
 
 const gamesList = [
   { id: 1, name: "Dino Run", level: "Beginner", price: 0, description: "Run & dodge obstacles!", img: "https://tse4.mm.bing.net/th/id/OIP.vpWkiSO-Ljn0K0nuilCAFAHaEK?pid=Api&P=0&h=180", link: "https://t-rex-runner.com/" },
@@ -16,8 +16,11 @@ const gamesList = [
 
 export default function Games() {
 
-  // ✅ Safe debug log (Commit 5)
+  // ✅ Existing debug log
   console.log("Games page loaded");
+
+  // ✅ Additional safe debug log (Commit 12)
+  console.log("Current filtered games count:", gamesList.length);
 
   const [search, setSearch] = useState("");
   const navigate = useNavigate();
@@ -58,9 +61,13 @@ export default function Games() {
       <h1 className="games-title text-center">🎮 Explore All Games</h1>
       <p className="games-sub text-center">Find your next favorite game!</p>
 
-      {/* ✅ Small helper text added */}
       <p className="text-center text-muted small">
         Browse free and premium games curated for every skill level.
+      </p>
+
+      {/* ✅ Show dynamic result count */}
+      <p className="text-center small">
+        Showing {filteredGames.length} game(s)
       </p>
 
       <div className="games-search-box">
