@@ -2,16 +2,18 @@ import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
 export default function Checkout() {
+
+  // ✅ Safe debug log (Commit 3)
+  console.log("Checkout component rendered");
+
   const location = useLocation();
   const navigate = useNavigate();
 
   const { cartItems = [] } = location.state || {};
   const [restoredCart, setRestoredCart] = useState([]);
 
-  // ✅ Always use correct cart (from state or restored)
   const displayCart = cartItems.length > 0 ? cartItems : restoredCart;
 
-  // ✅ Dynamic total price with qty
   const totalAmount = displayCart.reduce(
     (sum, game) => sum + (game.price * (game.qty || 1)), 
     0
@@ -25,7 +27,6 @@ export default function Checkout() {
     pincode: "",
   });
 
-  // ✅ Check login + restore pending cart
   useEffect(() => {
     const isLoggedIn = localStorage.getItem("gameHubLoggedIn");
 
@@ -67,7 +68,12 @@ export default function Checkout() {
 
   return (
     <div className="container mt-5 pt-4">
-      <h2 className="fw-bold text-center mb-4">🛍️ Checkout</h2>
+      <h2 className="fw-bold text-center mb-2">🛍️ Checkout</h2>
+
+      {/* ✅ Small helper text added */}
+      <p className="text-center text-muted mb-4">
+        Review your order and complete your purchase securely.
+      </p>
 
       <div className="row">
 
@@ -75,7 +81,6 @@ export default function Checkout() {
         <div className="col-md-6 mb-4">
           <h4 className="mb-3">Player Details 🎮</h4>
           <form>
-            {/* unchanged form */}
             {["username","email","address","city","pincode"].map((field, i) => (
               <div className="mb-3" key={i}>
                 <label className="form-label">{field.toUpperCase()}</label>
