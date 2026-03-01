@@ -79,29 +79,29 @@ const games = [
   },
 ];
 
-
 export default function Home() {
+
+  // ✅ Safe debug log (Commit 6)
+  console.log("Home page loaded successfully");
+
   const [search, setSearch] = useState("");
   const [filterLevel, setFilterLevel] = useState("All");
 
- // ✅ Add to My Games (Cart System)
-const addToMyGames = (game) => {
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const addToMyGames = (game) => {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-  const exists = cart.find(item => item.id === game.id);
+    const exists = cart.find(item => item.id === game.id);
 
-  if (exists) {
-    exists.qty += 1; // Increase quantity
-  } else {
-    cart.push({ ...game, qty: 1 });
-  }
+    if (exists) {
+      exists.qty += 1;
+    } else {
+      cart.push({ ...game, qty: 1 });
+    }
 
-  localStorage.setItem("cart", JSON.stringify(cart));
-  alert(`${game.name} added to My Games ✅`);
-};
+    localStorage.setItem("cart", JSON.stringify(cart));
+    alert(`${game.name} added to My Games ✅`);
+  };
 
-
-  // ✅ Filter + Search logic
   const filteredGames = games.filter(g => 
     g.name.toLowerCase().includes(search.toLowerCase()) &&
     (filterLevel === "All" || g.level === filterLevel)
@@ -120,7 +120,11 @@ const addToMyGames = (game) => {
         </h1>
         <p className="hero-sub">Play. Learn. Compete. Level Up ⚡</p>
 
-        {/* Search */}
+        {/* ✅ Small extra tagline */}
+        <p className="hero-tagline small">
+          Discover curated games designed to boost skills and fun.
+        </p>
+
         <div className="search-box">
           <Search size={20} />
           <input 
@@ -130,7 +134,6 @@ const addToMyGames = (game) => {
           />
         </div>
 
-        {/* Category Filter */}
         <select className="filter-select" onChange={(e) => setFilterLevel(e.target.value)}>
           <option value="All">All Levels</option>
           <option value="Beginner">Beginner</option>
@@ -159,17 +162,18 @@ const addToMyGames = (game) => {
                 <span className="level-tag">{g.level}</span>
 
                 <div className="mag-actions">
-<Link 
-  to={`/game/${g.id}`} 
-  state={g}
-  className="mag-play"
->
-  Play ▶
-</Link>
+                  <Link 
+                    to={`/game/${g.id}`} 
+                    state={g}
+                    className="mag-play"
+                  >
+                    Play ▶
+                  </Link>
 
-<span className="price-tag">
-  {g.price === 0 ? "Free" : `₹${g.price}`}
-</span>
+                  <span className="price-tag">
+                    {g.price === 0 ? "Free" : `₹${g.price}`}
+                  </span>
+
                   <button className="mag-add-btn" onClick={() => addToMyGames(g)}>
                     + My Games
                   </button>
@@ -180,7 +184,6 @@ const addToMyGames = (game) => {
         </div>
       </section>
 
-      {/* Bottom Banner */}
       <section className="hub-banner">
         🎯 Level-Up Your Mind With Fun Learning Games 🚀
       </section>

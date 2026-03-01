@@ -1661,4 +1661,12 @@ body {
     transform: translateY(0);
   }
 }
-/* Minor spacing cleanup */
+/* Commit 7 - Hero tagline text color fix */
+/* Commit 14 - Enhanced Hero Tagline Styling */
+.hero-tagline {
+  color: #000000;
+  font-weight: 600;
+  margin-top: 8px;
+  letter-spacing: 0.5px;
+  font-size: 14px;
+}

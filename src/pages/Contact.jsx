@@ -3,6 +3,10 @@ import { motion } from "framer-motion";
 import { Mail, Phone, MessageSquare, MapPin, Send } from "lucide-react";
 
 export default function Contact() {
+
+  // Small safe debug log (Commit 1)
+  console.log("Contact component rendered successfully");
+
   return (
     <div className="contact-container">
 
@@ -16,6 +20,7 @@ export default function Contact() {
           Contact <span>Game Hub</span> 🎮
         </h1>
         <p>We’re here to help you connect, play & grow!</p>
+        <small>Available 24/7 for gaming enthusiasts 🚀</small>
       </motion.div>
 
       <div className="contact-info">

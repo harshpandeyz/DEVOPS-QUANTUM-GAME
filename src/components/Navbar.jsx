@@ -3,28 +3,29 @@ import { Link, NavLink } from "react-router-dom";
 import { Gamepad2, ShoppingCart, User } from "lucide-react";
 
 export default function Navbar() {
+
+  // ✅ Safe debug log (Commit 11)
+  console.log("Navbar component rendered");
+
   const [open, setOpen] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(
     localStorage.getItem("gameHubLoggedIn") === "true"
   );
 
-  // ✅ Recheck login on storage change (fix navbar updating)
   useEffect(() => {
     const handleStorageChange = () => {
       setIsLoggedIn(localStorage.getItem("gameHubLoggedIn") === "true");
     };
 
     window.addEventListener("storage", handleStorageChange);
-
     return () => window.removeEventListener("storage", handleStorageChange);
   }, []);
 
-  // ✅ Logout Function
   const logout = () => {
     localStorage.removeItem("gameHubLoggedIn");
     alert("👋 Logged out successfully!");
     setIsLoggedIn(false);
-    window.location.href = "/login"; // redirect after logout
+    window.location.href = "/login";
   };
 
   return (
@@ -32,16 +33,14 @@ export default function Navbar() {
       <div className="nav-inner container">
 
         {/* Logo */}
-        <Link to="/" className="nav-logo">
+        <Link to="/" className="nav-logo" title="Go to Game Hub Home">
           <Gamepad2 size={28} /> <span>Game Hub</span>
         </Link>
 
-        {/* Mobile Menu Button */}
         <div className="menu-toggle" onClick={() => setOpen(!open)}>
           ☰
         </div>
 
-        {/* Menu */}
         <div className={`nav-links ${open ? "active" : ""}`}>
           <NavLink to="/" className="nav-item">Home</NavLink>
           <NavLink to="/games" className="nav-item">Games</NavLink>
@@ -52,7 +51,6 @@ export default function Navbar() {
           </NavLink>
         </div>
 
-        {/* Auth Buttons */}
         <div className={`auth-section ${open ? "active" : ""}`}>
           {!isLoggedIn ? (
             <>
@@ -66,7 +64,11 @@ export default function Navbar() {
           ) : (
             <>
               <Link to="/profile" className="nav-login">Profile</Link>
-              <button onClick={logout} className="nav-register" style={{border:"none",background:"none"}}>
+              <button
+                onClick={logout}
+                className="nav-register"
+                style={{ border:"none", background:"none" }}
+              >
                 Logout
               </button>
             </>

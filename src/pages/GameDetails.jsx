@@ -3,6 +3,10 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 
 export default function GameDetails() {
+
+  // ✅ Safe debug log (Commit 4)
+  console.log("GameDetails component opened");
+
   const { state: game } = useLocation();
   const navigate = useNavigate();
 
@@ -29,6 +33,12 @@ export default function GameDetails() {
       <img src={game.img} alt={game.name} className="details-img" />
 
       <h1 className="details-title">{game.name}</h1>
+
+      {/* ✅ Small helper subtitle added */}
+      <p className="details-subtitle text-muted">
+        Experience immersive gameplay and challenge yourself!
+      </p>
+
       <p className="details-desc">
         Get ready to dive into <b>{game.name}</b>! This game enhances focus,
         reaction skills, and strategic thinking. Enjoy and level up your mind!
@@ -42,13 +52,12 @@ export default function GameDetails() {
       </ul>
 
       <div className="details-btn-group">
-      <button 
-  onClick={() => window.open(game.link, "_blank")}
-  className="play-now-btn"
->
-  Play Now ▶
-</button>
-
+        <button 
+          onClick={() => window.open(game.link, "_blank")}
+          className="play-now-btn"
+        >
+          Play Now ▶
+        </button>
 
         <button onClick={handleAddToGames} className="play-now-btn">
           + Add to My Games

@@ -15,34 +15,34 @@ const gamesList = [
 ];
 
 export default function Games() {
+
+  // ✅ Existing debug log
+  console.log("Games page loaded");
+
+  // ✅ Additional safe debug log (Commit 12)
+  console.log("Current filtered games count:", gamesList.length);
+
   const [search, setSearch] = useState("");
-  const navigate = useNavigate(); // ✅
+  const navigate = useNavigate();
 
   const filteredGames = gamesList.filter(game =>
     game.name.toLowerCase().includes(search.toLowerCase())
   );
 
   const handleAddToMyGames = (game) => {
-    // ✅ Original login check (unchanged)
     const isLoggedIn = localStorage.getItem("isLoggedIn");
 
-    // ✅ Added fix: also check for gameHubLoggedIn key used in Navbar/Login
     const isActuallyLoggedIn =
       isLoggedIn === "true" ||
       localStorage.getItem("gameHubLoggedIn") === "true";
 
-    // ✅ For paid games, block if not logged in
     if (game.price > 0 && !isActuallyLoggedIn) {
       alert("⚠️ Login required to add paid games!");
-
-      // ✅ Save attempted item
       localStorage.setItem("pendingCheckout", JSON.stringify([game]));
-
       navigate("/login");
       return;
     }
 
-    // ✅ Your original logic (untouched)
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
     const exists = cart.find(item => item.id === game.id);
 
@@ -61,7 +61,15 @@ export default function Games() {
       <h1 className="games-title text-center">🎮 Explore All Games</h1>
       <p className="games-sub text-center">Find your next favorite game!</p>
 
-      {/* Search */}
+      <p className="text-center text-muted small">
+        Browse free and premium games curated for every skill level.
+      </p>
+
+      {/* ✅ Show dynamic result count */}
+      <p className="text-center small">
+        Showing {filteredGames.length} game(s)
+      </p>
+
       <div className="games-search-box">
         <Search size={18} />
         <input

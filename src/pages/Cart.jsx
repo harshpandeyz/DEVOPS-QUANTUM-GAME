@@ -3,6 +3,10 @@ import { motion } from "framer-motion";
 import { Link, useNavigate } from "react-router-dom";
 
 export default function Cart() {
+
+  // ✅ Safe debug log (Commit 13)
+  console.log("Cart page loaded");
+
   const [cartItems, setCartItems] = useState([]);
   const navigate = useNavigate();
 
@@ -50,7 +54,11 @@ export default function Cart() {
 
   return (
     <div className="container" style={{ marginTop: "80px" }}>
-      <h2 className="fw-bold text-center mb-4">🛒 My Game Cart</h2>
+      <h2 className="fw-bold text-center mb-2">🛒 My Game Cart</h2>
+
+<p className="text-center text-muted small mb-4">
+  Review your selected games before proceeding to checkout.
+</p>
 
       {cartItems.length === 0 ? (
         <p className="text-center fs-5">
