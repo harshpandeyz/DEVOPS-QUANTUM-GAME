@@ -3,6 +3,10 @@ import { motion } from "framer-motion";
 import { Rocket, Gamepad2, Brain, Users, Sparkles } from "lucide-react";
 
 export default function About() {
+
+  // Small safe debug log (Commit 2)
+  console.log("About component loaded successfully");
+
   return (
     <div className="about-container py-5">
 
@@ -24,10 +28,7 @@ export default function About() {
       <div className="container mt-5">
         <div className="row g-4">
 
-          <motion.div
-            className="col-md-4"
-            whileHover={{ scale: 1.05 }}
-          >
+          <motion.div className="col-md-4" whileHover={{ scale: 1.05 }}>
             <div className="about-card text-center p-4">
               <Rocket size={40} className="mb-3 icon" />
               <h5>Our Mission</h5>
@@ -38,10 +39,7 @@ export default function About() {
             </div>
           </motion.div>
 
-          <motion.div
-            className="col-md-4"
-            whileHover={{ scale: 1.05 }}
-          >
+          <motion.div className="col-md-4" whileHover={{ scale: 1.05 }}>
             <div className="about-card text-center p-4">
               <Brain size={40} className="mb-3 icon" />
               <h5>Skill + Fun</h5>
@@ -52,10 +50,7 @@ export default function About() {
             </div>
           </motion.div>
 
-          <motion.div
-            className="col-md-4"
-            whileHover={{ scale: 1.05 }}
-          >
+          <motion.div className="col-md-4" whileHover={{ scale: 1.05 }}>
             <div className="about-card text-center p-4">
               <Users size={40} className="mb-3 icon" />
               <h5>For Everyone</h5>
@@ -83,13 +78,15 @@ export default function About() {
         <h3 className="dev-name">Prathmesh Waghmare</h3>
         <p className="dev-role">Full-Stack Developer | Gamer | UI Enthusiast</p>
 
+        {/* Small new tagline (safe addition) */}
+        <p className="dev-tagline">Building modern web experiences with creativity 🚀</p>
+
         <p className="dev-desc">
           I created Game Hub as a modern, interactive platform where people can enjoy, 
           learn, and unlock their gaming potential.  
           My goal is to build creative tech experiences that inspire & entertain!
         </p>
         
-        {/* Connect Button */}
         <motion.button 
           whileHover={{ scale: 1.1 }} 
           className="contact-dev-btn"
@@ -98,7 +95,6 @@ export default function About() {
           <Sparkles size={18} className="me-2" /> Connect With Me
         </motion.button>
 
-        {/* Contact Pop-Up Modal */}
         <div id="contactModal" className="contact-modal">
           <div className="contact-box">
             <h3>Contact Developer</h3>
@@ -121,6 +117,7 @@ export default function About() {
             </button>
           </div>
         </div>
+
       {/* Tech Stack Section */}
       <motion.div
         className="container text-center mt-5 p-4 tech-stack-box"
