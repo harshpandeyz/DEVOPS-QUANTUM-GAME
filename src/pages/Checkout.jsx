@@ -138,7 +138,9 @@ export default function Checkout() {
               </li>
             </ul>
           )}
-
+<p className="text-end fw-semibold">
+  Payable Amount: {totalAmount === 0 ? "Free" : `₹${totalAmount}`}
+</p>
           <button 
             className="btn btn-primary w-100 fw-bold" 
             onClick={handlePlaceOrder}
