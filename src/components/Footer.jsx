@@ -3,6 +3,10 @@ import { Link } from "react-router-dom";
 import { Twitter, Instagram, Facebook, Linkedin } from "lucide-react";
 
 export default function Footer() {
+
+  // ✅ Safe debug log (Commit 10)
+  console.log("Footer component rendered");
+
   const [email, setEmail] = useState("");
 
   const submitNewsletter = (e) => {
@@ -18,12 +22,19 @@ export default function Footer() {
   return (
     <footer className="gv-footer">
       <div className="gv-footer-top container">
+
         {/* Column 1: Brand + desc */}
         <div className="gv-col gv-brand">
           <div className="gv-logo">🎮 <span className="gv-logo-text">Game Hub</span></div>
           <p className="gv-desc">
             Play, learn and level up — curated mini-games and brain-boosting fun for everyone.
           </p>
+
+          {/* ✅ Small extra tagline */}
+          <p className="small text-muted">
+            Empowering gamers with smart entertainment since 2026 🚀
+          </p>
+
           <div className="gv-socials" aria-label="Follow Game Hub">
             <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
               <Twitter />
@@ -40,7 +51,8 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Column 2: Quick Links */}
+        {/* (Rest of footer unchanged) */}
+
         <div className="gv-col">
           <h4>Quick Links</h4>
           <nav className="gv-links" aria-label="Quick links">
@@ -52,7 +64,6 @@ export default function Footer() {
           </nav>
         </div>
 
-        {/* Column 3: Resources */}
         <div className="gv-col">
           <h4>Resources</h4>
           <nav className="gv-links" aria-label="Resources links">
@@ -63,7 +74,6 @@ export default function Footer() {
           </nav>
         </div>
 
-        {/* Column 4: Newsletter */}
         <div className="gv-col">
           <h4>Stay in the loop</h4>
           <p className="small">Get new game drops, tips & offers — delivered monthly.</p>
