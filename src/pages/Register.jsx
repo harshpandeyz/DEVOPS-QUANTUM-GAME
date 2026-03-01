@@ -5,6 +5,10 @@ import { motion } from "framer-motion";
 import { Gamepad2 } from "lucide-react";
 
 export default function Register() {
+
+  // ✅ Safe debug log (Commit 9)
+  console.log("Register page loaded");
+
   const [form, setForm] = useState({ 
     name: "", 
     username: "",
@@ -22,20 +26,17 @@ export default function Register() {
   };
 
   const handleSubmit = (e) => {
-  e.preventDefault();
+    e.preventDefault();
 
-  if (form.password !== form.confirmPassword) {
-    alert("❌ Passwords do not match!");
-    return;
-  }
+    if (form.password !== form.confirmPassword) {
+      alert("❌ Passwords do not match!");
+      return;
+    }
 
-  // ✅ Save user details locally
-  localStorage.setItem("gameHubUser", JSON.stringify(form));
-  alert("✅ Account Created Successfully!");
-
-  // Redirect to login
-  window.location.href = "/login";
-};
+    localStorage.setItem("gameHubUser", JSON.stringify(form));
+    alert("✅ Account Created Successfully!");
+    window.location.href = "/login";
+  };
 
   return (
     <div className="auth-page">
@@ -60,9 +61,16 @@ export default function Register() {
         </div>
 
         <h2 className="auth-title">Sign Up</h2>
+
+        {/* ✅ Small helper text added */}
+        <p className="text-muted small mb-2">
+          Fill in your details carefully to create your secure account.
+        </p>
+
         <p className="auth-sub">Become part of the next-gen gaming world 🕹️</p>
 
         <form onSubmit={handleSubmit}>
+          {/* (form inputs unchanged) */}
           <input
             type="text"
             name="name"
