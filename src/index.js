@@ -11,3 +11,4 @@ root.render(
     <App />
   </BrowserRouter>
 );
+// Debugging note - no functional change

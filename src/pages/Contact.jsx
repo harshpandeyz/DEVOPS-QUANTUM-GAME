@@ -23,35 +23,46 @@ export default function Contact() {
         <small>Available 24/7 for gaming enthusiasts 🚀</small>
       </motion.div>
 
-      <div className="contact-content">
-        
-        {/* Left Box - Info */}
-        <motion.div 
-          className="contact-info"
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-        >
-          <h3>Reach Out</h3>
-          <p>Let’s talk gaming, ideas or support!</p>
+      <div className="contact-info">
+  <h3>Reach Out</h3>
+  <p>Let’s talk gaming, ideas or support!</p>
 
-          <div className="info-line">
-            <Phone /> <a href="tel:+91XXXXXXXXXX">+91 9309208325</a>
-          </div>
-          <div className="info-line">
-            <Mail /> <a href="mailto:yourmail@example.com">prathmeshwaghmare289@gmail.com</a>
-          </div>
-          <div className="info-line">
-            <MapPin /> Pune, Maharashtra, India
-          </div>
+  <h5 className="mt-3">Prathmesh Waghmare</h5>
+  <div className="info-line">
+    <Phone /> <a href="tel:+919309208325">+91 9309208325</a>
+  </div>
+  <div className="info-line">
+    <Mail /> <a href="mailto:prathmeshwaghmare289@gmail.com">
+      prathmeshwaghmare289@gmail.com
+    </a>
+  </div>
+  <div className="info-line">
+    <MapPin /> Pune, Maharashtra, India
+  </div>
 
-          <motion.a
-            href="tel:+91XXXXXXXXXX"
-            className="call-btn"
-            whileHover={{ scale: 1.05 }}
-          >
-            <MessageSquare /> Let's Connect
-          </motion.a>
-        </motion.div>
+  <hr />
+
+  <h5>Ibrahim Poonawala</h5>
+  <div className="info-line">
+    <Phone /> <a href="tel:+91XXXXXXXXXX">+91 7219317252</a>
+  </div>
+  <div className="info-line">
+    <Mail /> <a href="mailto:poonawalaibrahim9@gmail.com">
+      poonawalaibrahim9@gmail.com
+    </a>
+  </div>
+  <div className="info-line">
+    <MapPin /> Pune, Maharashtra, India
+  </div>
+
+  <motion.a
+    href="mailto:yourmail@example.com"
+    className="call-btn"
+    whileHover={{ scale: 1.05 }}
+  >
+    <MessageSquare /> Let's Connect
+  </motion.a>
+
 
         {/* Right Box - Form */}
         <motion.form 
