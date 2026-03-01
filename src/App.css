@@ -1661,3 +1661,9 @@ body {
     transform: translateY(0);
   }
 }
+/* Commit 7 - Hero tagline text color fix */
+.hero-tagline {
+  color: #000000;   /* Black text */
+  font-weight: 500;
+  margin-top: 5px;
+}

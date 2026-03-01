@@ -121,7 +121,7 @@ export default function Home() {
         <p className="hero-sub">Play. Learn. Compete. Level Up ⚡</p>
 
         {/* ✅ Small extra tagline */}
-        <p className="text-light small">
+        <p className="hero-tagline small">
           Discover curated games designed to boost skills and fun.
         </p>
 
