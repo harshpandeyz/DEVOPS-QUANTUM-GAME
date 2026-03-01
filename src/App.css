@@ -1662,8 +1662,11 @@ body {
   }
 }
 /* Commit 7 - Hero tagline text color fix */
+/* Commit 14 - Enhanced Hero Tagline Styling */
 .hero-tagline {
-  color: #000000;   /* Black text */
-  font-weight: 500;
-  margin-top: 5px;
+  color: #000000;
+  font-weight: 600;
+  margin-top: 8px;
+  letter-spacing: 0.5px;
+  font-size: 14px;
 }
