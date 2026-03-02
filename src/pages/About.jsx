@@ -3,10 +3,6 @@ import { motion } from "framer-motion";
 import { Rocket, Gamepad2, Brain, Users, Sparkles } from "lucide-react";
 
 export default function About() {
-
-  // Small safe debug log (Commit 2)
-  console.log("About component loaded successfully");
-
   return (
     <div className="about-container py-5">
 
@@ -28,7 +24,10 @@ export default function About() {
       <div className="container mt-5">
         <div className="row g-4">
 
-          <motion.div className="col-md-4" whileHover={{ scale: 1.05 }}>
+          <motion.div
+            className="col-md-4"
+            whileHover={{ scale: 1.05 }}
+          >
             <div className="about-card text-center p-4">
               <Rocket size={40} className="mb-3 icon" />
               <h5>Our Mission</h5>
@@ -39,7 +38,10 @@ export default function About() {
             </div>
           </motion.div>
 
-          <motion.div className="col-md-4" whileHover={{ scale: 1.05 }}>
+          <motion.div
+            className="col-md-4"
+            whileHover={{ scale: 1.05 }}
+          >
             <div className="about-card text-center p-4">
               <Brain size={40} className="mb-3 icon" />
               <h5>Skill + Fun</h5>
@@ -50,7 +52,10 @@ export default function About() {
             </div>
           </motion.div>
 
-          <motion.div className="col-md-4" whileHover={{ scale: 1.05 }}>
+          <motion.div
+            className="col-md-4"
+            whileHover={{ scale: 1.05 }}
+          >
             <div className="about-card text-center p-4">
               <Users size={40} className="mb-3 icon" />
               <h5>For Everyone</h5>
@@ -83,15 +88,13 @@ export default function About() {
         <hr />
         
 
-        {/* Small new tagline (safe addition) */}
-        <p className="dev-tagline">Building modern web experiences with creativity 🚀</p>
-
         <p className="dev-desc">
           We created Game Hub as a modern, interactive platform where people can enjoy, 
           learn, and unlock their gaming potential.  
           My goal is to build creative tech experiences that inspire & entertain!
         </p>
         
+        {/* Connect Button */}
         <motion.button 
           whileHover={{ scale: 1.1 }} 
           className="contact-dev-btn"
@@ -100,6 +103,7 @@ export default function About() {
           <Sparkles size={18} className="me-2" /> Connect With Us
         </motion.button>
 
+        {/* Contact Pop-Up Modal */}
         <div id="contactModal" className="contact-modal">
           <div className="contact-box">
             <h3>Contact Developers</h3>
@@ -107,6 +111,11 @@ export default function About() {
             <p><strong>Name:</strong> Prathmesh Waghmare</p>
             <p><strong>Phone:</strong> <a href="tel:+91 9309208325">+91 9309208325</a></p>
             <p><strong>Email:</strong> <a href="mailto:prathmeshwaghmare289@gmail.com">prathmeshwaghmare289@gmail.com</a></p>
+
+
+             <p><strong>Name:</strong> Harsh pandey</p>
+            <p><strong>Phone:</strong> <a href="tel:+91 11235865">+91 11235865</a></p>
+            <p><strong>Email:</strong> <a href="mailto:harshpandey289@gmail.com">harshap17058@gmail.com</a></p>
 
             <p><strong>Name:</strong> Ibrahim Poonawala</p>
             <p><strong>Phone:</strong> <a href="tel:+91 7219317252">+91 7219317252</a></p>
@@ -132,44 +141,6 @@ export default function About() {
           </div>
         </div>
 
-      {/* Tech Stack Section */}
-      <motion.div
-        className="container text-center mt-5 p-4 tech-stack-box"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-      >
-        <h2 className="mb-4">⚡ Tech Stack Used</h2>
-
-        <div className="row justify-content-center g-4">
-          <div className="col-md-3">
-            <div className="tech-card p-3">
-              <h5>React.js</h5>
-              <p>Frontend UI Development</p>
-            </div>
-          </div>
-
-          <div className="col-md-3">
-            <div className="tech-card p-3">
-              <h5>Framer Motion</h5>
-              <p>Smooth Animations</p>
-            </div>
-          </div>
-
-          <div className="col-md-3">
-            <div className="tech-card p-3">
-              <h5>Bootstrap</h5>
-              <p>Responsive Layout</p>
-            </div>
-          </div>
-
-          <div className="col-md-3">
-            <div className="tech-card p-3">
-              <h5>Lucide Icons</h5>
-              <p>Modern Icon Design</p>
-            </div>
-          </div>
-        </div>
-      </motion.div>
       </motion.div>
 
     </div>
